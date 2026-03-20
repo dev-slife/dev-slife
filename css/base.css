@@ -48,7 +48,7 @@ body {
 footer {
     background: var(--blue-gradient);
     padding: 3px;
-    margin: 2%;
+    margin-top: 2%;
     font-size: 18px;
     text-align: center;
     color: var(--black);

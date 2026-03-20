@@ -11,13 +11,13 @@
 
 ## Tech Stack
 ### Coding, Scripting, & Markdown
-![Tech Language Skills](https://skillicons.dev/icons?i=cpp,py,java,js,html,css,lua,md,mysql,r&perline=6)
+![Tech Language Skills](https://go-skill-icons.vercel.app/api/icons?i=cpp,py,java,js,html,css,lua,luau,md,assembly,yaml,mysql,r,visualbasic&perline=6)
 
 ### Terminal, Kernel, & OS
-![Terminal, Kernel, & OS Skills](https://skillicons.dev/icons?i=linux,bash,powershell,raspberrypi,ubuntu,windows&perline=6)
+![Terminal, Kernel, & OS Skills](https://go-skill-icons.vercel.app/api/icons?i=linux,bash,terminal,powershell,raspberrypi,ubuntu,windows&perline=6)
 
 ### Tools
-![Tool Skills](https://skillicons.dev/icons?i=vscode,azure,docker,eclipse,git,github,robloxstudio,githubactions,regex,npm,blender,discord&perline=6)
+![Tool Skills](https://go-skill-icons.vercel.app/api/icons?i=vscode,azure,docker,eclipse,git,github,virtualbox,wireshark,wsl,vercel,vim,davinci,affinity,jupyter,robloxstudio,githubactions,regex,miro,obs,npm,blender,putty,discord,slack&perline=6)
 
 ### Frameworks & Libraries
-![Framework & Library Skills](https://skillicons.dev/icons?i=nodejs,express&perline=6)
+![Framework & Library Skills](https://go-skill-icons.vercel.app/api/icons?i=nodejs,expressjs,pandas,matplotlib,scikitlearn,seaborn&perline=6)
