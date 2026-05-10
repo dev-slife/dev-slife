@@ -14,10 +14,9 @@ const path = require("path");
 const express = require("express");
 
 const __root = path.dirname(__dirname);
-const __public = path.join(__root, 'public');
 const app = express();
 const options = {
-    index: path.join(__public, "index.html"),
+    index: path.join(__root, "index.html"),
     extensions: ['html']
 }
 
@@ -26,15 +25,15 @@ const options = {
 // --------------------------- INITIALIZATION --------------------------- //
 
 // Mount app
-app.use(express.static(__public, options));
+app.use(express.static(__root));
 app.use(express.json());
 
 
 
 // --------------------------- ROUTING --------------------------- //
 
-app.get('/', (_, res) => {
-    res.sendFile(path.join(__public, 'index.html'));
+app.get("/", (_, res) => {
+    res.sendFile(path.join(__root, 'index.html'));
 });
 
 
