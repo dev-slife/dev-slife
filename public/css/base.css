@@ -1,0 +1,201 @@
+/* ------------------------- VARIABLES ------------------------- */
+
+:root {
+    --primary-color: #F7FBFF;
+    --secondary-color: #C7D9E8;
+
+    --dark-black: #07111C;
+    --black: #101A2A;
+    --dark-grey: #17243A;
+    --grey: #24334A;
+
+    --light-blue: #CFEFFF;
+    --blue: #77C7E8;
+    --deep-blue: #4F88D9;
+    --ice: #EAFBFF;
+    --gold: #E8D68A;
+    --lavender: #C9C3FF;
+
+    --bkg-gradient: linear-gradient(180deg, #0a1422 0%, #101a2a 45%, #07111c 100%);
+    --blue-gradient: linear-gradient(135deg, var(--ice), var(--blue));
+
+    --font-primary: "Poppins", sans-serif;
+    --font-secondary: "Mulish", sans-serif;
+
+    --h1-size: clamp(3.5rem, 9vw, 7rem);
+    --h2-size: clamp(2.2rem, 5vw, 4rem);
+    --h3-size: clamp(1.4rem, 2.5vw, 2rem);
+
+    --soft-shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+    --soft-shadow-hover: 0 28px 70px rgba(0, 0, 0, 0.52);
+    --border-soft: 1px solid rgba(234, 251, 255, 0.10);
+
+    --transition-fast: 180ms ease;
+    --transition-med: 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-slow: 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+
+/* ------------------------- BASE ------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: var(--font-primary);
+    background: var(--bkg-gradient);
+    color: var(--primary-color);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-width: auto;
+    scrollbar-color: rgba(119, 199, 232, 0.8) transparent;
+}
+
+
+
+/* ------------------------- SCROLLBAR ------------------------- */
+
+::-webkit-scrollbar {
+    width: 24px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07111c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(119, 199, 232, 0.86);
+    border-radius: 100px;
+    border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(119, 199, 232, 1);
+    box-shadow: 0 0 18px rgba(119, 199, 232, 0.5);
+}
+
+
+
+/* ------------------------- HEADERS ------------------------- */
+
+h1 {
+    font-size: var(--h1-size);
+}
+
+h2 {
+    font-size: var(--h2-size);
+}
+
+h3 {
+    font-size: var(--h3-size);
+}
+
+
+
+/* ------------------------- LINKS ------------------------- */
+
+a:link {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+a:visited {
+    color: var(--lavender);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+a:active {
+    color: var(--ice);
+    text-decoration: underline;
+}
+
+
+
+/* ------------------------- FOOTER ------------------------- */
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    width: min(92vw, 980px);
+    padding: 12px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: linear-gradient(
+    135deg,
+    rgba(9, 18, 32, 0.72),
+    rgba(18, 32, 54, 0.58)
+    );
+    color: #f4fbff;
+
+    border: 1px solid rgba(173, 229, 255, 0.18);
+    border-radius: 18px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+    font-size: 16px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+footer img {
+    display: inline-block;
+    border: 1px solid rgba(173, 229, 255, 0.22);
+    border-radius: 10px;
+    vertical-align: middle;
+    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+footer a:hover {
+    transform: scale(1.06);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+
+
+/* ------------------------- ACCESSIBILITY ------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+        scroll-snap-type: none !important;
+    }
+}

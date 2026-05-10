@@ -1,4 +1,4 @@
-# A Dev's Slife
+# A Dev Slife
 > "It's simple. I want to create a world where life is as convenient as I wish it to be. A comfortable world where everyone can laugh and enjoy their lives as much as possible."
 
 \- Rimuru Tempest

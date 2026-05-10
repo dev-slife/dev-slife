@@ -1,0 +1,305 @@
+/* ------------------------- BASE ------------------------- */
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(119, 199, 232, 0.24), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(201, 195, 255, 0.16), transparent 24%),
+        radial-gradient(circle at 50% 90%, rgba(232, 214, 138, 0.08), transparent 22%),
+        linear-gradient(180deg, #08111d 0%, #101a2a 45%, #07111c 100%);
+}
+
+section,
+.info_block {
+    scroll-snap-align: start;
+    min-height: 100svh;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+
+
+/* ------------------------- HERO ------------------------- */
+
+.hero_panel {
+    min-height: 100svh;
+    width: 100%;
+    display: flex;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
+        url("https://gifdb.com/images/high/rimuru-tempest-happy-smile-fireworks-background-4u72m3hxc96h6kba.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+    padding: clamp(3rem, 8vw, 7rem);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(6, 12, 22, 0.24), rgba(6, 12, 22, 0.45)),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.06), transparent 52%);
+}
+
+.hero_panel blockquote {
+    max-width: min(950px, 92vw);
+    margin: 0;
+    text-align: center;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    line-height: 1.8;
+    color: var(--secondary-color);
+    animation: quoteIn 1200ms var(--transition-slow) both;
+}
+
+.hero_panel h1 {
+    text-align: center;
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.9;
+    margin: 0;
+    color: var(--ice);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.9),
+        0 0 8px rgba(120, 240, 255, 0.7),
+        0 0 16px rgba(255, 120, 220, 0.45);
+    animation: titleIn 1100ms var(--transition-slow) both;
+}
+
+.hero_sub {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: var(--transition-med);
+}
+
+.hero_panel p {
+    margin: 0;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    color: var(--secondary-color);
+    animation: textIn 1300ms var(--transition-slow) both;
+}
+
+.hero_sub:hover {
+    transform: scale(1.06) translateY(-1px);
+}
+
+.hero_sub:hover blockquote,
+.hero_sub:hover p {
+    color: var(--ice);
+    text-shadow: 0 0 14px rgba(234, 251, 255, 0.3);
+}
+
+
+
+/* ------------------------- INFO BLOCKS ------------------------- */
+
+.info_block {
+    width: 100%;
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: clamp(4rem, 9vw, 8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.25rem;
+    text-align: center;
+    background:
+        linear-gradient(180deg, rgba(36, 51, 74, 0.72), rgba(16, 26, 42, 0.86));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 34px;
+    border: 1px solid rgba(234, 251, 255, 0.11);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.44);
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    transition:
+        transform var(--transition-med),
+        box-shadow var(--transition-med),
+        border-color var(--transition-med);
+}
+
+.info_block:hover {
+    transform: scale(1.06);
+    box-shadow: 0 34px 85px rgba(0, 0, 0, 0.56);
+    border-color: rgba(234, 251, 255, 0.22);
+}
+
+.info_block h2 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(2.9rem, 5vw, 4.8rem);
+    line-height: 1;
+    color: var(--ice);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ------------------------- ABOUT SECTION ------------------------- */
+
+.info_block.about_flat {
+    padding: clamp(3.5rem, 7vw, 7rem) clamp(1.6rem, 3vw, 2.8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: clamp(1.1rem, 2.2vw, 2.4rem);
+    background: rgba(16, 26, 42, 0.08);
+    border-top: 1px solid rgba(234, 251, 255, 0.08);
+    border-bottom: 1px solid rgba(234, 251, 255, 0.08);
+    scroll-snap-align: start;
+}
+
+.info_block.about_flat h2 {
+    margin: 0;
+    font-size: clamp(2.9rem, 5.2vw, 4.8rem);
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+.info_block.about_flat ul {
+    margin: 0 auto;
+    padding-left: 0;
+    padding-bottom: 0;
+    list-style: none;
+    font-size: clamp(1.4rem, 2vw, 1.85rem);
+    line-height: 2.4;
+    max-width: min(900px, 92vw);
+    color: var(--secondary-color);
+}
+
+.info_block.about_flat li {
+    transition:
+        transform var(--transition-med),
+        box-shadow var(--transition-med),
+        filter var(--transition-med);
+}
+
+.info_block.about_flat li:hover {
+    transform: scale(1.08) translateY(-2px) rotate(-2deg);
+    box-shadow: 0 16px 40px rgba(119, 199, 232, 0.48);
+    filter: brightness(1.1);
+    animation: manaSurge 1.4s ease-in-out forwards;
+}
+
+.info_block.about_flat li,
+.hero_panel blockquote,
+.hero_panel p {
+    cursor: default;
+    transition: transform var(--transition-med), color var(--transition-med);
+}
+
+.info_block.about_flat li:hover {
+    transform: scale(1.03) translateY(-1px);
+    color: var(--ice);
+    text-shadow: 0 0 16px rgba(234, 251, 255, 0.35);
+}
+
+
+
+/* ------------------------- TECH STACK PANELS ------------------------- */
+
+.tech_panel {
+    gap: 1.8rem;
+}
+
+.tech_panel img {
+    width: min(100%, 980px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.32));
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform var(--transition-med), filter var(--transition-med);
+}
+
+.tech_panel img:hover {
+    transform: scale(1.015);
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.42));
+}
+
+.tech_panel:nth-of-type(2) img { animation-delay: 120ms; }
+.tech_panel:nth-of-type(3) img { animation-delay: 260ms; }
+.tech_panel:nth-of-type(4) img { animation-delay: 400ms; }
+.tech_panel:nth-of-type(5) img { animation-delay: 540ms; }
+
+
+
+/* ------------------------- KEYFRAME ANIMATIONS ------------------------- */
+
+@keyframes titleIn {
+    from {
+        opacity: 0;
+        transform: translateY(-34px);
+        letter-spacing: 0.09em;
+        filter: blur(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 0.04em;
+        filter: blur(0);
+    }
+}
+
+@keyframes quoteIn {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+        filter: blur(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes textIn {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes manaSurge {
+    0% {
+        transform: scale(1) translateY(0) rotate(0deg);
+        box-shadow: 0 10px 28px rgba(119, 199, 232, 0.32);
+    }
+    30% {
+        transform: scale(1.12) translateY(-6px) rotate(3deg);
+        box-shadow: 0 20px 50px rgba(201, 195, 255, 0.64);
+    }
+    100% {
+        transform: scale(1.06) translateY(-2px) rotate(1deg);
+        box-shadow: 0 16px 40px rgba(119, 199, 232, 0.48);
+    }
+}

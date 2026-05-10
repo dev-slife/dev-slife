@@ -1,0 +1,110 @@
+/* ------------------------- MARQUEE BLOCKS ------------------------- */
+
+.double_marquee {
+    overflow: hidden;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.2rem, 3vw, 2rem);
+    scroll-snap-align: center;
+}
+
+
+
+/* ------------------------- MARQUEE TRACKS ------------------------- */
+
+.marquee_track {
+    width: 100%;
+    height: clamp(160px, 22vh, 280px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.marquee_inner {
+    display: flex;
+    gap: clamp(2.2rem, 4vw, 3rem);
+    will-change: transform;
+}
+
+.forward {
+    animation: marqueeLeft 40s linear infinite;
+}
+
+.backward {
+    transform: translateX(-60%);
+    animation: marqueeRight 40s linear infinite;
+}
+
+
+
+/* ------------------------- MARQUEE ITEMS ------------------------- */
+
+.marquee_inner img {
+    height: clamp(84px, 11vw, 142px);
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.34));
+    transition: transform var(--transition-med), filter var(--transition-med);
+}
+
+.marquee_inner img:hover {
+    transform: scale(1.22);
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.64));
+}
+
+
+
+/* ------------------------- KEYFRAME ANIMATIONS ------------------------- */
+
+@keyframes marqueeLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marqueeRight {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes waveScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(48px) rotate(-2deg) scale(0.97);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(0) rotate(1deg) scale(1.01);
+    }
+    50% {
+        transform: translateY(-8px) rotate(-1deg) scale(1.005);
+    }
+    75% {
+        transform: translateY(0) rotate(0.5deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-36px) rotate(0deg) scale(0.97);
+    }
+}
+
+
+
+/* ------------------------- SUPPORTS ------------------------- */
+
+@supports (animation-timeline: view()) {
+    .tech_panel img {
+        animation: waveScroll both;
+        animation-timeline: view();
+        animation-range: entry 15% exit 90%;
+    }
+}
