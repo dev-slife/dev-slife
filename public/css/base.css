@@ -190,11 +190,11 @@ footer a:hover {
 /* ------------------------- ACCESSIBILITY ------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    * {
         animation: none !important;
         transition: none !important;
+    }
+    html {
         scroll-behavior: auto !important;
         scroll-snap-type: none !important;
     }
